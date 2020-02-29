@@ -5,11 +5,12 @@
     <title>聊天室</title>
 </head>
 <body>
-   <div style="width: 70%;   height: 400px; border: 1px solid black;overflow:auto" id="list"></div>
+    <div style="float:left;width:70%">
+    <div style="width: 70%;   height: 400px; border: 1px solid black;overflow:auto" id="list"></div>
     <input type="text" id="message" >
     <input type="button" value="发送" id="btn">
     <img src="./bq.png" alt="添加表情" style="width:30px;height:30px;margin-top:10px;" id="bq">
-    <div id="bqlist" style="width:70%;height:auto"></div>
+    <div id="bqlist" style="width:70%;height:auto"></div></div>
     <div class="onlinelist" style="border:1px solid black">在线列表</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
