@@ -10,6 +10,7 @@
     <input type="button" value="发送" id="btn">
     <img src="./bq.png" alt="添加表情" style="width:30px;height:30px;margin-top:10px;" id="bq">
     <div id="bqlist" style="width:70%;height:auto"></div>
+    <div style="clear:both"></div>
     <div class="onlinelist" style="float: right; border:1px solid black">在线列表</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -27,10 +28,6 @@
         // console.log(data);
         if(data.is_me == 1 && data.type=='login'){
             var content = "<p style='text-align:center'>尊敬的用户："+data.username+"欢迎您的来到</p>"
-            var list = '';
-            for(var i in data.online_list){
-                list +="<p>"+data.online_list[i].username+"</p>"
-            }
         }else if(data.is_me == 0 && data.type=='login'){
             var content = "<p style='text-align:center'>系统消息："+data.username+"上线了</p>"
         }else if(data.is_me == 1 && data.type=='message'){
@@ -39,6 +36,10 @@
             var content="<div align='left'><p style='margin-left:20px;'>来自"+data.username+"的消息</p></p><p style='border:1px solid #ff0000;margin-left:20px;width:40%;height:auto;border-radius:inherit;background-color:#00FFFF'>"+data.message+"</p></div>";
         }else if(data.is_me == 0 && data.type=='loginout'){
             var content="<p style='text-align:center'>系统消息："+data.username+"离开了直播间</p>"
+        }
+        var list = '在线用户列表';
+        for(var i in data.online_list){
+            list +="<p>"+data.online_list[i].username+"</p>"
         }
         $(".onlinelist").html(list);
         $("#list").append(content);

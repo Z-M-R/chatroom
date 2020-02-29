@@ -73,14 +73,16 @@ $ws->on('message', function ($ws, $frame) {
                     'type'=>'message',
                     'is_me'=>1,
                     'username'=>$name,
-                    'message'=>$info['con']
+                    'message'=>$info['con'],
+                    'online_list'=>$userlist
                 ];
             }else{
                 $message=[
                     'type'=>'message',
                     'is_me'=>0,
                     'username'=>$name,
-                    'message'=>$info['con']
+                    'message'=>$info['con'],
+                    'online_list'=>$userlist
                 ];
             }
             $res=json_encode($message,JSON_UNESCAPED_UNICODE);
