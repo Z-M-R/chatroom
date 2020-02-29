@@ -10,8 +10,7 @@
     <input type="button" value="发送" id="btn">
     <img src="./bq.png" alt="添加表情" style="width:30px;height:30px;margin-top:10px;" id="bq">
     <div id="bqlist" style="width:70%;height:auto"></div>
-    <div style="clear:both"></div>
-    <div class="onlinelist" style="float: right; border:1px solid black">在线列表</div>
+    <div class="onlinelist" style="border:1px solid black">在线列表</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
