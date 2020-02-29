@@ -5,11 +5,14 @@
     <title>聊天室</title>
 </head>
 <body>
-    <div style="width: 70%;   height: 400px; border: 1px solid black;overflow:auto" id="list"></div>
+   <div style="float:left">
+   <div style="width: 70%;   height: 400px; border: 1px solid black;overflow:auto" id="list"></div>
     <input type="text" id="message" >
     <input type="button" value="发送" id="btn">
     <img src="./bq.png" alt="添加表情" style="width:30px;height:30px;margin-top:10px;" id="bq">
     <div id="bqlist" style="width:70%;height:auto"></div>
+   </div>
+    <div class="onlinelist" style="float: right; border:1px solid black">在线列表</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
@@ -23,7 +26,7 @@
     }
     ws.onmessage = function (res) {
         var data = JSON.parse(res.data);
-        //console.log(data);
+        console.log(data);
         if(data.is_me == 1 && data.type=='login'){
             var content = "<p style='text-align:center'>尊敬的用户："+data.username+"欢迎您的来到</p>"
         }else if(data.is_me == 0 && data.type=='login'){

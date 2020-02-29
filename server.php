@@ -37,7 +37,8 @@ $ws->on('message', function ($ws, $frame) {
         $message = [
             'type'=>'login',
             'is_me'=>1,
-            'username'=>$info['con']
+            'username'=>$info['con'],
+            'online_list'=>$userlist
         ];
         $res = json_encode($message,JSON_UNESCAPED_UNICODE);
         $ws->push($frame->fd, $res);
@@ -47,7 +48,8 @@ $ws->on('message', function ($ws, $frame) {
                 $message = [
                     'type'=>'login',
                     'is_me'=>0,
-                    'username'=>$info['con']
+                    'username'=>$info['con'],
+                    'online_list'=>$userlist
                 ];
                 $res = json_encode($message,JSON_UNESCAPED_UNICODE);
                 $ws->push($value['client_id'], $res);
